@@ -9,7 +9,7 @@ router.get("/notes", (req,res) =>{
     res.json(db)
 })
 
-router.post('/', (req,res)=>{
+router.post('/notes', (req,res)=>{
     fs.readFile("./db/db.json","utf-8",(err,data)=>{
         if(err){
             return res.status(500).json({msg:"error reading db"})
