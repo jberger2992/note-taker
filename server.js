@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
-const db = require("./db/db.json");
 const uuid = require('uuid');
 const path = require("path");
 const PORT = process.env.port || 3001;
@@ -21,7 +20,16 @@ router.get('/*', (req, res) =>
 );
 
 app.get("/api/notes", (req,res) =>{
-  return res.json(db)
+  const db = require("./db/db.json");
+  console.log(db);
+  fs.readFile("./db/db.json","utf-8",(err,data)=>{
+    if(err){
+      return res.status(500).json({msg:"error reading db"})
+    }
+    else{
+      res.json(JSON.parse(data))
+    }
+  })
 })
 
 app.post('/api/notes', (req,res)=>{
