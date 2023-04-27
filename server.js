@@ -3,7 +3,7 @@ const router = express.Router();
 const fs = require("fs");
 const uuid = require('uuid');
 const path = require("path");
-const PORT = process.env.port || 3001;
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 app.use(express.static("public"))
