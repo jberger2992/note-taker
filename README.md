@@ -3,7 +3,9 @@
 An application to write and save notes.
 
 ![preview](./images/Screenshot.png)
-## Instillation
+
+https://joshnotetaker.herokuapp.com/
+## Installation
 N/A
 ## Usage
-Follow this link: https://joshnotetaker.herokuapp.com/
+N/A
